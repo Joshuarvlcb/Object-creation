@@ -64,7 +64,7 @@ button {
   font-size: 18px;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   text-decoration: none;
 }
 button:before {
@@ -123,6 +123,21 @@ span {
 }
 .s {
   color: purple;
+}
+.y {
+  color: yellow;
+}
+.g {
+  color: rgb(115, 204, 115);
+}
+.r {
+  color: red;
+}
+.o {
+  color: orange;
+}
+.c {
+  color: rgb(209, 61, 86);
 }
 label {
   padding: 50px;
