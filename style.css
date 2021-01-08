@@ -1,0 +1,180 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Quicksand", sans-serif;
+  overflow-x: hidden;
+}
+
+header {
+  height: 100vh;
+  width: 100vw;
+}
+.gradient {
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 192, 203, 0.397),
+    rgba(173, 216, 230, 0.349)
+  );
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.vid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  z-index: -1;
+}
+.btn {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -75%);
+  overflow: hidden;
+}
+button {
+  /* background-image: linear-gradient(
+    to right,
+    rgba(255, 192, 203, 0.397),
+    rgba(173, 216, 230, 0.349)
+  ); */
+  background: rgb(255, 255, 255, 0.1);
+  width: 200px;
+  height: 50px;
+
+  outline: none;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  font-weight: 700;
+}
+.normal {
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+button:before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  /* border-radius: 50px; */
+  background: rgb(255, 255, 255, 0.1);
+}
+button::after {
+  content: "";
+  position: absolute;
+
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.459),
+    transparent
+  );
+  transition: 0.5s;
+}
+button:hover::after {
+  left: 100%;
+}
+.objects-page {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form {
+  width: 700px;
+  height: 800px;
+  background-color: plum;
+}
+.title {
+  height: 80px;
+  width: 100%;
+  background-color: pink;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 2px;
+  position: relative;
+}
+span {
+  color: rgb(101, 195, 233);
+}
+.s {
+  color: purple;
+}
+label {
+  padding: 50px;
+  font-size: 26px;
+  color: rgb(221, 68, 94);
+}
+.input-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.colum {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-top: 20px;
+  padding-right: 10px;
+}
+input {
+  border: 2px solid rgb(0, 195, 255);
+  outline: none;
+  height: 25px;
+  background-color: white;
+  width: 200px;
+}
+.name {
+  margin-bottom: 12px;
+}
+textarea {
+  width: 400px;
+  margin-left: 50px;
+  border: 2px solid pink;
+}
+.forth-row {
+  position: relative;
+  height: 330px;
+}
+
+.a {
+  text-decoration: none;
+  font-size: 30px;
+  color: rgb(211, 30, 60);
+  text-transform: uppercase;
+  outline: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100px;
+  width: 100%;
+  background-color: rgb(38, 153, 219);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
