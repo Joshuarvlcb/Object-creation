@@ -11,14 +11,12 @@ const surveyObject = function () {
   let lastName = document.getElementById("lastName").value;
   let email = document.getElementById("email").value;
   let phoneNumber = document.getElementById("phone").value;
-  let message = document.getElementById("message").value;
   console.log(
     (firstName = {
       fn: firstName,
       ln: lastName,
       em: email,
       phone: phoneNumber,
-      msg: message,
     })
   );
 };
