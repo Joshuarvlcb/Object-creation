@@ -178,6 +178,7 @@ textarea {
 }
 
 .a {
+  overflow: hidden;
   text-decoration: none;
   font-size: 30px;
   color: rgb(211, 30, 60);
