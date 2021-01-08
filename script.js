@@ -6,6 +6,11 @@ const submit = document.getElementById("submit");
 
 //2.What i need to do
 //
+let form = document.getElementById("form");
+function handleForm(event) {
+  event.preventDefault();
+}
+form.addEventListener("submit", handleForm);
 const surveyObject = function () {
   let firstName = document.getElementById("firstName").value;
   let lastName = document.getElementById("lastName").value;
