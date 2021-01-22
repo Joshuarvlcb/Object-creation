@@ -103,34 +103,91 @@
       </div>
     </div>
  <div class="project">
+     <form action="#">
+
    <div class="airplane-form">
         <div class="flower"><h1 class="book">Book now</h1></div> 
-  <form action="#">
     <div class="names">
-      <input type="text" id="first">
-      <input type="text" id="last" required>
-      <input type="date" id="birth">
-      <input type="text" id="cityLeave" placeholder="City,State">
-      <input type="text" id="cityReturn" placeholder="City,State">
-      <input type="date" id="dateLeave">
-      <input type="date" id="dateReturn">
-      <p>What kind of food ypu want</p>
-            <label for="fish">fish</label>
-
-      <input type="radio" value="chicken" class ='radio' name="project" >
-            <label for="fish">Chicken</label>
-      <input type="radio" value='fish'  class = 'radio'  name="project">
-            <label for="fish">vegetarian</label>
-      <input type="radio" class='radio'value="vegeterian" name="project" >
-  </form>
-    </div>
-          <button id="submit5">submit</button>
-
-      
+      <div class="container-form">
+      <div class="first-row-2">
+        <div class="colums-1">
+      <input type="text" id="first" placeholder="first name">
+      <input type="text" id="last" placeholder="last name" >
+          </div>
       </div>
+
+      <div class="second-row-2">
+        <div class="colums-2">
+          <label for="birthday">Birth Day</label>
+         <input type="date" id="birth">
+      <input class="input-new" type="text" id="cityLeave" placeholder="City,State">
+      <input  class="input-new" type="text" id="cityReturn" placeholder="City,State">
+      </div>
+
+      </div>
+      <div class="third">
+        <div class="column-3">
+          <label for="">Leaving to</label>
+      <input class="input-new" type="date" id="dateLeave">
+                <label for="">Returning</label>
+
+      <input class="input-new" type="date"
+       id="dateReturn">
+      </div>
+      </div>
+            <p>What kind of food you want</p>
+
+      <div class="forth">
+        
+      <div class="forth-c">
+            <label class="l" for="fish">fish</label>
+ </div>
+
+      <input type="radio" value="chicken" class ='radio' name="project" id="chicken">
+       <div class="forth-c">
+            <label class="l" for="fish">Chicken</label>
+</div>
+
+      <input type="radio" value='fish'  class = 'radio'  name="project" id="fish">
+ <div class="forth-c">
+            <label class="l" for="fish">vegetarian</label>
+        </div>    
+      <input type="radio"
+       class='radio'value="vegeterian" name="project" id="vegetarian">
+      
+        
+    </div>
+           <p class="order">Order your extras (only 10$ each!)</p>
+
+    <div class="fith">
+           <input type="number" id="bagNumbers" placeholder="bags"> 
+
+      <div id="mydiv">
+      <input type="checkbox" value="legRoom" class="checkboxs">
+      <label for="legRoom">legRoom</label><br>
+      <input type="checkbox" value="windowSeat" class="checkboxs">
+
+      <label for="window Seat">window seat</label><br>
+      <input type="checkbox"  value="head Phones" class="checkboxs">
+      <label for="head phones">head phones</label><br>
+      <input type="checkbox" value="meal" class="checkboxs">
+      <label for="meal">Second serving meal</label><br>
+      </div> 
+      </div>
+      </div>
+
+     
+      <button id="submit5">submit</button>
+      
+
+  </form>
+
       </div>
    </div>
  </div>
+   <div class="btn-section">
+          <button id="print">Print</button>
+          </div>
     <script src="./script.js"></script>
     <script src="./airplane.js"></script>
   </body>

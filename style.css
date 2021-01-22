@@ -205,10 +205,12 @@ textarea {
 .airplane-form {
   height: 800px;
   width: 1200px;
+  margin: 0px;
   background-color: rgb(121, 15, 80);
   position: relative;
 }
 .flower {
+  margin: 0px;
   background-image: linear-gradient(
       to left bottom,
       rgba(253, 130, 151, 0.644),
@@ -220,7 +222,7 @@ textarea {
   background-size: cover;
   width: 400px;
   height: 800px;
-  position: relative;
+  position: absolute;
 }
 
 .book {
@@ -237,4 +239,60 @@ textarea {
 }
 button {
   overflow: hidden;
+}
+
+.btn-section {
+  height: 100vh;
+  width: 100%;
+  background-color: rgb(83, 21, 83);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.first-row-2 {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 50px;
+  padding-top: 50px;
+}
+.second-row-2 {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 50px;
+}
+.third {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 50px;
+}
+p {
+  width: 100%;
+  text-align: center;
+  font-size: 23px;
+  color: white;
+  padding-bottom: 30px;
+  padding-left: 400px;
+}
+.forth {
+  display: flex;
+  position: absolute;
+  right: 0;
+  width: 70%;
+}
+#submit5 {
+  position: absolute;
+  left: 50%;
+}
+.fith {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.order {
+  padding-top: 80px;
 }
