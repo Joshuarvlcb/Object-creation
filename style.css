@@ -67,7 +67,7 @@ button {
   color: rgb(233, 233, 233);
   text-decoration: none;
 }
-button:before {
+/* button:before {
   content: " ";
   position: absolute;
   top: 0;
@@ -75,9 +75,8 @@ button:before {
   width: 50%;
   height: 100%;
   /* border-radius: 50px; */
-  background: rgb(255, 255, 255, 0.1);
-}
-button::after {
+
+/* button::after {
   content: "";
   position: absolute;
 
@@ -92,16 +91,17 @@ button::after {
     transparent
   );
   transition: 0.5s;
-}
-button:hover::after {
+} */
+/* button:hover::after {
   left: 100%;
-}
+} */
 .objects-page {
   height: 100vh;
   width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: rgb(85, 11, 85);
 }
 .form {
   width: 700px;
@@ -193,4 +193,48 @@ textarea {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.project {
+  height: 100vh;
+  width: 100%;
+  background-color: pink;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.airplane-form {
+  height: 800px;
+  width: 1200px;
+  background-color: rgb(121, 15, 80);
+  position: relative;
+}
+.flower {
+  background-image: linear-gradient(
+      to left bottom,
+      rgba(253, 130, 151, 0.644),
+      rgba(230, 64, 141, 0.438)
+    ),
+    url(./flower.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 400px;
+  height: 800px;
+  position: relative;
+}
+
+.book {
+  color: rgb(255, 255, 255);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 49px;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Lato", sans-serif;
+}
+button {
+  overflow: hidden;
 }
