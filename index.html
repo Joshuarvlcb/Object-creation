@@ -118,23 +118,36 @@
 
       <div class="second-row-2">
         <div class="colums-2">
-          <!-- <label for="birthday">Birth Day</label> -->
+          <label class="label-form" for="birthday">
+            Birth Day
          <input type="date" id="birth">
-      <input class="input-new" type="text" id="cityLeave" placeholder="City,State">
-      <input  class="input-new" type="text" id="cityReturn" placeholder="City,State">
+          </label>
+          <label class="label-form" for="cityFrom">
+            City From
+              <input class="input-new" type="text" id="cityLeave" placeholder="City,State">
+          </label>
+  <label for="cityTo" class="label-form">
+
+  City To
+   <input  class="input-new" type="text" id="cityReturn" placeholder="City,State">
+  </label>
+   
       </div>
 
       </div>
       <div class="third">
         <div class="column-3">
-          <!-- <label for="">Leaving to</label> -->
+       <label for="" class="label-form">Date Leave
       <input class="input-new" type="date" id="dateLeave">
-                <!-- <label for="">Returning</label> -->
+      </label>
 
+            <label for="" class="label-form">Date Return
       <input class="input-new" type="date"
        id="dateReturn">
-
+          </label> 
+          <label for="bags" class="label-form">Bags
              <input type="number" id="bagNumbers" placeholder="bags"> 
+             </label>
 
       </div>
       </div>
@@ -142,7 +155,7 @@
 
       <div class="forth">
         <div class="wrapper">
-       <label for="chicken" class="radio">
+       <label class="label-form" for="chicken" class="radio">
       <input
         type="radio"
         id="chicken"
@@ -155,7 +168,7 @@
     </label>
 
       
-            <label class="radio" for="fish">
+            <label  class="label-form" class="radio" for="fish">
               
       
 
@@ -166,7 +179,7 @@
 
             </label>
 
-      <label class="radio" for="vegetarian">
+      <label class="label-form" class="radio" for="vegetarian">
       <input type="radio"
        class='radio-btn'value="vegeterian" name="project" id="vegetarian">
                <div class="radio-custom"></div>
@@ -178,21 +191,21 @@
            <h3 class="order">Order your extras (only 10$ each!)</h3>
     <div class="fith">
 
-       <label for="legRoom">
+       <label class="label-form" for="legRoom">
          legRoom
       <input type="checkbox" value="legRoom" class="checkboxs">  
       </label>
-      <input type="checkbox" value="windowSeat" class="checkboxs">
+      <input  class="label-form" type="checkbox" value="windowSeat" class="checkboxs">
 
-      <label for="window Seat">
+      <label class="label-form" for="window Seat">
         window seat
-      <input type="checkbox"  value="head Phones" class="checkboxs">
+      <input class="label-form" type="checkbox"  value="head Phones" class="checkboxs">
       </label>
-      <label for="head phones">
+      <label  class="label-form"for="head phones">
         head phones
       <input type="checkbox" value="headphones" class="checkboxs">
       </label>
-      <label for="meal">
+      <label for="meal" class="label-form">
                 Second meal
          <input type="checkbox" value="meal" class="checkboxs">
       </label>
@@ -212,7 +225,7 @@
    <div class="btn-section">
    <div class="print-sec">
      <div class="btn-container">
-<button class="print" id="printBtn">Print</button>
+<a class="print" id="printBtn">Print</a>
   </div>
      <div class="container-btn">
 <div class="space" id="space">
@@ -236,14 +249,14 @@
 
 <div class="select-space">
 <div class="object-content">
-  <div class="item" >first name- <span class="span" id="fn22"></span></div>
+  <div class="item" >first name- <span class="span2" id="fn22"></span></div>
   <div class="item">last name- <span class="span" id="lastn2"></span></div>
   <div class="item">id- <span class="span" id="id2"></span></div>
   <div class="item">birth-day-<span class="span" id="bday"></span></div>
   <div class="item">leaving from-<span class="span" id="leavefrom"></span></div>
   <div class="item">going to-<span class="span" id="goingto"></span></div>
   <div class="item">date leaving-<span class="span" id="dateleave"></span></div>
-  <div class="item">date Returning<span class="span" id="datereturning"></div>
+  <div class="item">date Returning-<span class="span" id="datereturning"></div>
   <div class="item">bags-<span class="span" id="bags"></span></div>
   <div class="item">meals-<span class="span" id="meals"></span></div>
   <div class="item">extras-<span class="span" id="extras"></span></div>

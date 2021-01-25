@@ -257,7 +257,7 @@ select.addEventListener("change", (name) => {
 
       goingTo.innerHTML += `<span>${objectData[i].cityReturn}</span>`;
       dateLeave.innerHTML += `<span>${objectData[i].dateLeave}</span>`;
-      dateReturn.innerHTML += `<span>${objectData[i].dateReturn}</span>`;
+      dateReturning.innerHTML += `<span>${objectData[i].dateReturn}</span>`;
       bags.innerHTML += `<span>${objectData[i].bags}</span>`;
       meals.innerHTML += `<span>${objectData[i].food}</span>`;
       extras.innerHTML += `<span>${objectData[i].extras}</span>`;
