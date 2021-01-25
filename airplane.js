@@ -60,6 +60,19 @@ const dateFormat = function (birthYear) {
   let day = date.getDate();
   return `${month}/${day}/${year}`;
 };
+const extraCost = function (bags, checkbox) {
+  const bags2 = Number(bags);
+  let checkbox2 = checkbox.size;
+  const total = bags2 * 20 + checkbox2 * 10;
+
+  if (!checkbox2) {
+    checkbox2 = 1;
+    console.log(`your total is ${bags2 * 20 + checkbox2 * 10}`);
+  } else {
+    console.log(`your total is ${total}`);
+  }
+};
+
 let id = 56;
 const objectData = [];
 const joshua = new User(
@@ -71,8 +84,8 @@ const joshua = new User(
   dateFormat("1/21/2021"),
   dateFormat("9/23/2021"),
   "LX" + 53,
+  "fish",
   9,
-  "chicken",
   "headphones"
 );
 
@@ -85,8 +98,8 @@ const noemi = new User(
   dateFormat("1/21/2021"),
   dateFormat("9/23/2021"),
   "LX" + 54,
-  9,
-  "chicken, fish",
+  "chicken",
+  5,
   "headphones"
 );
 const saul = new User(
@@ -98,25 +111,30 @@ const saul = new User(
   dateFormat("1/21/2022"),
   dateFormat("6/23/2022"),
   "LX" + 56,
-  9,
-  "chicken, fish,'veggies'",
-  "headphones,legroom"
+  "veggies",
+  3,
+  "legroom"
 );
-// const joshLeave = leaveTime(
-//   joshua.firstName,
-//   joshua.dateLeave,
-//   joshua.dateReturn
-// );
-// const joshAge = age(joshua.firstName, joshua.dateOfBirth);
+const joshLeave = leaveTime(
+  joshua.firstName,
+  joshua.dateLeave,
+  joshua.dateReturn
+);
+const joshAge = age(joshua.firstName, joshua.dateOfBirth);
+const joshTotal = extraCost(joshua.bags, joshua.extras);
+console.log(`---------------------------------------------`);
+const noemiLeave = leaveTime(
+  noemi.firstName,
+  noemi.dateLeave,
+  noemi.dateReturn
+);
+const noemiAge = age(noemi.firstName, noemi.dateOfBirth);
+const noemiTotal = extraCost(noemi.bags, noemi.extras);
+console.log(`---------------------------------------------`);
 
-// const noemiLeave = leaveTime(
-//   noemi.firstName,
-//   noemi.dateLeave,
-//   noemi.dateReturn
-// );
-// const noemiAge = age(noemi.firstName, noemi.dateOfBirth);
-// const saulLeave = leaveTime(saul.firstName, saul.dateLeave, saul.dateReturn);
-// const saulAge = age(saul.firstName, saul.dateOfBirth);
+const saulLeave = leaveTime(saul.firstName, saul.dateLeave, saul.dateReturn);
+const saulAge = age(saul.firstName, saul.dateOfBirth);
+const saulTotal = extraCost(saul.bags, saul.extras);
 objectData.push(joshua, noemi, saul);
 //1.i need to get the value of my radio button and put it inside the object array
 //i need to slice the last values of the radio array and always update it
@@ -129,13 +147,6 @@ for (let i = 0; i < radios.length; i++) {
     radioValue = radio.slice(-1);
   });
 }
-
-const extraCost = function (bags, checkbox) {
-  const bags2 = Number(bags);
-  const checkbox2 = checkbox.size;
-  const total = bags2 * 20 + checkbox2 * 10;
-  console.log(`your total is ${total}`);
-};
 
 let boxes = new Set([]);
 let checks = document.getElementsByClassName("checkboxs");
@@ -213,8 +224,10 @@ let options = [];
 let select = document.getElementById("select");
 let option = document.createElement("option");
 for (let i = 0; i < objectData.length; i++) {
-  option.text = `${objectData[i].firstName} ${objectData[i].lastName}`;
-  options.push(option.outerHTML);
+  if (objectData[i].firstName !== "" && objectData[i].lastName !== "") {
+    option.text = `${objectData[i].firstName} ${objectData[i].lastName}`;
+    options.push(option.outerHTML);
+  }
 }
 //i need to click on a person and get there first name
 //i need to find out what array i clicked on so i can get the value for name
@@ -245,7 +258,6 @@ select.addEventListener("change", (name) => {
 
   const namesValue = name.target.value;
   const first = namesValue.slice(0, namesValue.indexOf(" "));
-  console.log(first);
 
   for (let i = 0; i < objectData.length; i++) {
     if (first == objectData[i].firstName) {
@@ -267,3 +279,4 @@ select.addEventListener("change", (name) => {
 });
 
 select.insertAdjacentHTML("beforeEnd", options.join("\n"));
+//
