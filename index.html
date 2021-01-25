@@ -118,7 +118,7 @@
 
       <div class="second-row-2">
         <div class="colums-2">
-          <label for="birthday">Birth Day</label>
+          <!-- <label for="birthday">Birth Day</label> -->
          <input type="date" id="birth">
       <input class="input-new" type="text" id="cityLeave" placeholder="City,State">
       <input  class="input-new" type="text" id="cityReturn" placeholder="City,State">
@@ -127,54 +127,77 @@
       </div>
       <div class="third">
         <div class="column-3">
-          <label for="">Leaving to</label>
+          <!-- <label for="">Leaving to</label> -->
       <input class="input-new" type="date" id="dateLeave">
-                <label for="">Returning</label>
+                <!-- <label for="">Returning</label> -->
 
       <input class="input-new" type="date"
        id="dateReturn">
+
+             <input type="number" id="bagNumbers" placeholder="bags"> 
+
       </div>
       </div>
-            <p>What kind of food you want</p>
+        <h3>What kind of food would you like?</h3>
 
       <div class="forth">
-        
-      <div class="forth-c">
-            <label class="l" for="fish">fish</label>
- </div>
+        <div class="wrapper">
+       <label for="chicken" class="radio">
+      <input
+        type="radio"
+        id="chicken"
+        name="project"
+        value="chicken"
+        class="radio-btn"
+      />
+      <div class="radio-custom"></div>
+      Chicken
+    </label>
 
-      <input type="radio" value="chicken" class ='radio' name="project" id="chicken">
-       <div class="forth-c">
-            <label class="l" for="fish">Chicken</label>
-</div>
-
-      <input type="radio" value='fish'  class = 'radio'  name="project" id="fish">
- <div class="forth-c">
-            <label class="l" for="fish">vegetarian</label>
-        </div>    
-      <input type="radio"
-       class='radio'value="vegeterian" name="project" id="vegetarian">
       
-        
+            <label class="radio" for="fish">
+              
+      
+
+      <input type="radio" value='fish'     class="radio-btn"  name="project" id="fish">
+              <div class="radio-custom"></div>
+       Fish
+     
+
+            </label>
+
+      <label class="radio" for="vegetarian">
+      <input type="radio"
+       class='radio-btn'value="vegeterian" name="project" id="vegetarian">
+               <div class="radio-custom"></div>
+       vegetarian
+       </label>
+       </div>
+
     </div>
-           <p class="order">Order your extras (only 10$ each!)</p>
-
+           <h3 class="order">Order your extras (only 10$ each!)</h3>
     <div class="fith">
-           <input type="number" id="bagNumbers" placeholder="bags"> 
 
-      <div id="mydiv">
-      <input type="checkbox" value="legRoom" class="checkboxs">
-      <label for="legRoom">legRoom</label><br>
+       <label for="legRoom">
+         legRoom
+      <input type="checkbox" value="legRoom" class="checkboxs">  
+      </label>
       <input type="checkbox" value="windowSeat" class="checkboxs">
 
-      <label for="window Seat">window seat</label><br>
+      <label for="window Seat">
+        window seat
       <input type="checkbox"  value="head Phones" class="checkboxs">
-      <label for="head phones">head phones</label><br>
-      <input type="checkbox" value="meal" class="checkboxs">
-      <label for="meal">Second serving meal</label><br>
-      </div> 
+      </label>
+      <label for="head phones">
+        head phones
+      <input type="checkbox" value="headphones" class="checkboxs">
+      </label>
+      <label for="meal">
+                Second meal
+         <input type="checkbox" value="meal" class="checkboxs">
+      </label>
       </div>
-      </div>
+      </div>  
 
      
       <button id="submit5">submit</button>
@@ -185,9 +208,55 @@
       </div>
    </div>
  </div>
+
    <div class="btn-section">
-          <button id="print">Print</button>
-          </div>
+   <div class="print-sec">
+     <div class="btn-container">
+<button class="print" id="printBtn">Print</button>
+  </div>
+     <div class="container-btn">
+<div class="space" id="space">
+  <div class="ids" id="ids">ID</div>
+  <div class="space-2">
+    <div class="id-space" id="id-space"></div>
+    <div class="name-space" id="name-space"></div>
+  </div>
+  <div class="names" id='names'>Full Name</div>
+  </div>
+  </div>
+</div>
+
+<div class="select-wrapper">
+<div class="select-btn2">
+  <select name="" id="select">
+    <option value="" selected disabled hidden>select name</option>
+</select>
+</div>
+
+
+<div class="select-space">
+<div class="object-content">
+  <div class="item" >first name- <span class="span" id="fn22"></span></div>
+  <div class="item">last name- <span class="span" id="lastn2"></span></div>
+  <div class="item">id- <span class="span" id="id2"></span></div>
+  <div class="item">birth-day-<span class="span" id="bday"></span></div>
+  <div class="item">leaving from-<span class="span" id="leavefrom"></span></div>
+  <div class="item">going to-<span class="span" id="goingto"></span></div>
+  <div class="item">date leaving-<span class="span" id="dateleave"></span></div>
+  <div class="item">date Returning<span class="span" id="datereturning"></div>
+  <div class="item">bags-<span class="span" id="bags"></span></div>
+  <div class="item">meals-<span class="span" id="meals"></span></div>
+  <div class="item">extras-<span class="span" id="extras"></span></div>
+
+</div>
+
+</div>
+
+
+
+
+</div>
+  </div>
     <script src="./script.js"></script>
     <script src="./airplane.js"></script>
   </body>
