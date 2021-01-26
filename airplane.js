@@ -147,7 +147,6 @@ for (let i = 0; i < radios.length; i++) {
   });
 }
 let boxes = new Set([]);
-let currentbox = []
 let checks = document.getElementsByClassName("checkboxs");
 for (let i = 0; i < checks.length; i++) {
   checks[i].addEventListener("click", () => {
@@ -156,8 +155,6 @@ for (let i = 0; i < checks.length; i++) {
     } else {
       boxes.delete(checks[i].value);
     }
-    console.log(boxes)
-
   });
 }
 const setup = document
@@ -305,3 +302,8 @@ select.addEventListener("change", (name) => {
   }
   // console.log(namesValue);
 });
+const close = document.getElementById('close')
+const modal = document.getElementById('modal')
+close.addEventListener('click',()=>{
+modal.classList.add('remove')
+})
