@@ -5,10 +5,11 @@ const leaveTime = function (name, dateLeave, dateReturn) {
   const dateReturn2 = new Date(dateReturn);
   const difference = dateReturn2 - dateLeave2;
   const days = 1000 * 60 * 60 * 24;
-  console.log(
-    `${name} you have been gone for ${Math.abs(Math.floor(difference / days))}`
-  );
+  return `${name} you have been gone for ${Math.abs(
+    Math.floor(difference / days)
+  )}`;
 };
+
 const age = function (name, birthDay2) {
   const current = new Date();
   const currentYear = current.getFullYear();
@@ -16,9 +17,7 @@ const age = function (name, birthDay2) {
   const birthDay = new Date(birthDay2);
   const year = birthDay.getFullYear();
   const age = currentYear - year;
-  console.log(
-    `${name} you are ${age} years old and ${currentMonth} months old`
-  );
+  console.log(`${name} you are ${Math.floor(age)} years old`);
   if (age >= 21) {
     return "you can drink alcohol";
   } else {
@@ -53,23 +52,23 @@ class User {
   }
 }
 
+//make 7 hours on the time
 const dateFormat = function (birthYear) {
   let date = new Date(birthYear);
   let month = date.getMonth() + 1;
   let year = date.getFullYear();
-  let day = date.getDate();
+  let day = date.getDate() + 1;
   return `${month}/${day}/${year}`;
 };
 const extraCost = function (bags, checkbox) {
   const bags2 = Number(bags);
-  let checkbox2 = checkbox.size;
-  const total = bags2 * 20 + checkbox2 * 10;
-
+  let checkbox2 = checkbox.size + 1;
+  const total = bags2 * 20 + checkbox2 * 10 + 300;
   if (!checkbox2) {
     checkbox2 = 1;
-    console.log(`your total is ${bags2 * 20 + checkbox2 * 10}`);
+    console.log(`your total is ${bags2 * 20 + checkbox2 * 10 + 300}$`);
   } else {
-    console.log(`your total is ${total}`);
+    console.log(`your total is ${total}$`);
   }
 };
 
@@ -110,7 +109,7 @@ const saul = new User(
   "Los Angeles Ca",
   dateFormat("1/21/2022"),
   dateFormat("6/23/2022"),
-  "LX" + 56,
+  "LX" + 55,
   "veggies",
   3,
   "legroom"
@@ -147,7 +146,6 @@ for (let i = 0; i < radios.length; i++) {
     radioValue = radio.slice(-1);
   });
 }
-
 let boxes = new Set([]);
 let checks = document.getElementsByClassName("checkboxs");
 for (let i = 0; i < checks.length; i++) {
@@ -171,32 +169,40 @@ const setup = document
     const dateLeave = document.getElementById("dateLeave").value;
     const dateReturn = document.getElementById("dateReturn").value;
     const bags = document.getElementById("bagNumbers").value;
-    id++;
-    const passenger = new User(
-      firstName,
-      lastName,
-      dateFormat(birthDay),
-      cityReturn,
-      cityLeave,
-      dateFormat(dateLeave),
-      dateFormat(dateReturn),
-      "LX" + id,
-      radioValue,
-      bags,
-      boxes
-    );
-    leaveTime(dateReturn, dateLeave);
-    age(birthDay);
-    extraCost(bags, boxes);
-    document.querySelector("form").reset();
-    if (firstName !== " " && lastName !== " ") {
-      objectData.push(passenger);
 
+    document.querySelector("form").reset();
+    if (
+      (firstName !== " " &&
+        lastName !== " " &&
+        radioValue.includes("chicken")) ||
+      radioValue.includes("fish") ||
+      radioValue.includes("vegeterian")
+    ) {
+      const passenger = new User(
+        firstName,
+        lastName,
+        dateFormat(birthDay),
+        cityReturn,
+        cityLeave,
+        dateFormat(dateLeave),
+        dateFormat(dateReturn),
+        "LX" + id,
+        radioValue,
+        bags,
+        boxes
+      );
+      leaveTime(dateReturn, dateLeave);
+      age(birthDay);
+      extraCost(bags, boxes);
+      objectData.push(passenger);
+      id++;
+      radioValue = " ";
+      //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
       let select = document.getElementById("select");
       let option = document.createElement("option");
 
       for (let i = 0; i < objectData.length; i++) {
-        option.text = `${objectData[i].firstName} ${objectData[i].lastName}`;
+        option.text = `${objectData[i].firstName} ${objectData[i].lastName} ${objectData[i].id}`;
         options.pop();
         options.pop();
         options.pop();
@@ -205,17 +211,19 @@ const setup = document
       select.insertAdjacentHTML("beforeEnd", options.join("\n"));
     }
   });
-
 document.addEventListener("DOMContentLoaded", setup);
 
+//1 fix to not print id there is no first name
 document.getElementById("printBtn").addEventListener("click", () => {
   const ids = document.getElementById("id-space");
   const names = document.getElementById("name-space");
   ids.innerHTML = "";
   names.innerHTML = "";
   for (let i = 0; i < objectData.length; i++) {
-    ids.innerHTML += `<div><span>${objectData[i].id}</span></div>`;
-    names.innerHTML += `<div><span>${objectData[i].firstName} ${objectData[i].lastName}</span></div>`;
+    if (objectData[i].firstName !== "") {
+      ids.innerHTML += `<div><span>${objectData[i].id}</span></div>`;
+      names.innerHTML += `<div><span>${objectData[i].firstName} ${objectData[i].lastName}</span></div>`;
+    }
   }
 });
 
@@ -225,7 +233,7 @@ let select = document.getElementById("select");
 let option = document.createElement("option");
 for (let i = 0; i < objectData.length; i++) {
   if (objectData[i].firstName !== "" && objectData[i].lastName !== "") {
-    option.text = `${objectData[i].firstName} ${objectData[i].lastName}`;
+    option.text = `${objectData[i].firstName} ${objectData[i].lastName} ${objectData[i].id}`;
     options.push(option.outerHTML);
   }
 }
@@ -258,9 +266,15 @@ select.addEventListener("change", (name) => {
 
   const namesValue = name.target.value;
   const first = namesValue.slice(0, namesValue.indexOf(" "));
-
+  //1.problem
+  //whenever a user has the same name and i slect on one of the users the both pop up
+  //i need to also check for the unique id or a if statment that if i get the same name we are getting the one we picked
   for (let i = 0; i < objectData.length; i++) {
-    if (first == objectData[i].firstName) {
+    if (
+      first == objectData[i].firstName &&
+      objectData[i].id.slice(-2) == objectData[i].id.slice(-2)
+    ) {
+      console.log(objectData[i].id.slice(-2));
       firstName.innerHTML += `<span>${objectData[i].firstName}</span>`;
       lastName.innerHTML += `<span>${objectData[i].lastName}</span>`;
       id.innerHTML += `<span>${objectData[i].id}</span>`;
@@ -279,4 +293,8 @@ select.addEventListener("change", (name) => {
 });
 
 select.insertAdjacentHTML("beforeEnd", options.join("\n"));
-//
+//make the day a day ahead 7 hours
+//give the objects a unique value for when i search on them so if they are the same name they do not repeat
+
+//id
+//do not increment the value if it does not have name and food
