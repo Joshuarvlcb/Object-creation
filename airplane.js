@@ -147,6 +147,7 @@ for (let i = 0; i < radios.length; i++) {
   });
 }
 let boxes = new Set([]);
+let currentbox = []
 let checks = document.getElementsByClassName("checkboxs");
 for (let i = 0; i < checks.length; i++) {
   checks[i].addEventListener("click", () => {
@@ -155,6 +156,8 @@ for (let i = 0; i < checks.length; i++) {
     } else {
       boxes.delete(checks[i].value);
     }
+    console.log(boxes)
+
   });
 }
 const setup = document
@@ -177,7 +180,9 @@ const setup = document
         radioValue.includes("chicken")) ||
       radioValue.includes("fish") ||
       radioValue.includes("vegeterian")
-    ) {
+    )
+    if(boxes.has('legRoom') || boxes.has('windowseat') || boxes.has('headphones') || boxes.has('meal')){
+     {
       const passenger = new User(
         firstName,
         lastName,
@@ -210,7 +215,8 @@ const setup = document
       }
       select.insertAdjacentHTML("beforeEnd", options.join("\n"));
     }
-  });
+  }
+});
 document.addEventListener("DOMContentLoaded", setup);
 
 //1 fix to not print id there is no first name
@@ -234,9 +240,15 @@ let option = document.createElement("option");
 for (let i = 0; i < objectData.length; i++) {
   if (objectData[i].firstName !== "" && objectData[i].lastName !== "") {
     option.text = `${objectData[i].firstName} ${objectData[i].lastName} ${objectData[i].id}`;
+    //outer html is replacing completely replacing the option element with the firstName content
     options.push(option.outerHTML);
   }
 }
+//outer html
+//insertAdjacentHTML method that is putting the options in the select element after eachother with beforeend
+//before end
+//
+select.insertAdjacentHTML("beforeEnd", options.join("\n"));
 //i need to click on a person and get there first name
 //i need to find out what array i clicked on so i can get the value for name
 select.addEventListener("change", (name) => {
@@ -263,19 +275,19 @@ select.addEventListener("change", (name) => {
   bags.innerHTML = "";
   meals.innerHTML = "";
   extras.innerHTML = "";
-
+  //target returns the specific element that trigered the event
   const namesValue = name.target.value;
   const first = namesValue.slice(0, namesValue.indexOf(" "));
+  const idName = namesValue.split('').slice(-2).join('')
+
   //1.problem
   //whenever a user has the same name and i slect on one of the users the both pop up
   //i need to also check for the unique id or a if statment that if i get the same name we are getting the one we picked
   for (let i = 0; i < objectData.length; i++) {
     if (
-      first == objectData[i].firstName &&
-      objectData[i].id.slice(-2) == objectData[i].id.slice(-2)
-    ) {
-      console.log(objectData[i].id.slice(-2));
-      firstName.innerHTML += `<span>${objectData[i].firstName}</span>`;
+      first == objectData[i].firstName) {
+          if(idName == objectData[i].id.slice(-2)){
+        firstName.innerHTML += `<span>${objectData[i].firstName}</span>`;
       lastName.innerHTML += `<span>${objectData[i].lastName}</span>`;
       id.innerHTML += `<span>${objectData[i].id}</span>`;
       bday.innerHTML += `<span>${objectData[i].dateOfBirth}</span>`;
@@ -287,14 +299,9 @@ select.addEventListener("change", (name) => {
       bags.innerHTML += `<span>${objectData[i].bags}</span>`;
       meals.innerHTML += `<span>${objectData[i].food}</span>`;
       extras.innerHTML += `<span>${objectData[i].extras}</span>`;
-    }
+          }
+        }
+
   }
   // console.log(namesValue);
 });
-
-select.insertAdjacentHTML("beforeEnd", options.join("\n"));
-//make the day a day ahead 7 hours
-//give the objects a unique value for when i search on them so if they are the same name they do not repeat
-
-//id
-//do not increment the value if it does not have name and food
