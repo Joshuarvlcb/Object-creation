@@ -51,7 +51,6 @@ class User {
     this.extras = extras;
   }
 }
-
 //make 7 hours on the time
 const dateFormat = function (birthYear) {
   let date = new Date(birthYear);
@@ -277,9 +276,6 @@ select.addEventListener("change", (name) => {
   const first = namesValue.slice(0, namesValue.indexOf(" "));
   const idName = namesValue.split('').slice(-2).join('')
 
-  //1.problem
-  //whenever a user has the same name and i slect on one of the users the both pop up
-  //i need to also check for the unique id or a if statment that if i get the same name we are getting the one we picked
   for (let i = 0; i < objectData.length; i++) {
     if (
       first == objectData[i].firstName) {
@@ -302,8 +298,78 @@ select.addEventListener("change", (name) => {
   }
   // console.log(namesValue);
 });
+
+
+//modal
 const close = document.getElementById('close')
+const overLay = document.getElementById('overlay')
 const modal = document.getElementById('modal')
 close.addEventListener('click',()=>{
 modal.classList.add('remove')
+overLay.classList.add('remove')
 })
+// document.addEventListener('click',e=>{
+//   console.log('document')
+// },{capture:true})
+
+// //
+// const josh = {
+//   birthYear:2003,
+//   fruits:230,
+//   bindMethod(year = new Date(),price){
+//       console.log(`you are ${year.getFullYear() - this.birthYear} years old`)
+//       let fruits = this.fruits;
+//       let price2 = price
+//       console.log(`you have sold ${fruits} fruits and made ${fruits*price2}$ `)
+//   }
+// }
+// josh.bindMethod(undefined,21)
+// const functionBind = josh.bindMethod
+// const jessy = {
+//   birthYear:2001,
+//   fruits:230,
+// }
+// functionBind.call(jessy,undefined,21)
+
+
+// const john = {
+//   Josh.call(this,)
+// }
+
+// //problem make a diamond size x
+// //i need to loop and add 1 * after each iteration on a new line
+// let str = ''
+// for(let i = 0;i <= 5;i++){
+// str += '\n'
+// for(let j = 0;j < i  ;j++){
+//   str += '*'
+// }
+// }
+// for(let e = 0;e <= 4;e++){
+//   str+='\n'
+//   for(let x = 3 ;x >=e;x--){
+//     str+='*'
+//   }
+// }
+// console.log(str)
+
+
+// //problem i nned to create this
+// //1 = 1
+// // 1 + 2 = 3
+// // 1 + 2 + 3 = 6
+// // 1 + 2 + 3 + 4 = 10
+// // 1 + 2 + 3 + 4 + 5 = 15
+
+// // 1 + 3 + 6 + 10 + 15 = 35
+// // The output of the series is: 35
+
+// //i need to make a for loop that adds the input length strating from one
+// const input = 10
+// let number = []
+// number = (number.map(Number))
+// let answer;
+// for(let i = 1; i <= input;i++){
+// number.push(i)
+// console.log([i])
+}
