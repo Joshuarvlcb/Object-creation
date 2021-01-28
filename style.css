@@ -499,6 +499,7 @@ select {
   color: rgb(177, 231, 191);
   font-size: 22px;
 }
+/* fixing the modal */
 .modal-page{
   position: fixed;
   top: 0;
