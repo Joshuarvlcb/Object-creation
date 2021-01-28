@@ -304,9 +304,11 @@ select.addEventListener("change", (name) => {
 const close = document.getElementById('close')
 const overLay = document.getElementById('overlay')
 const modal = document.getElementById('modal')
+const modalPage = document.getElementById('modalPage')
 close.addEventListener('click',()=>{
 modal.classList.add('remove')
 overLay.classList.add('remove')
+modalPage.classList.add('remove')
 })
 // document.addEventListener('click',e=>{
 //   console.log('document')
@@ -372,4 +374,3 @@ overLay.classList.add('remove')
 // for(let i = 1; i <= input;i++){
 // number.push(i)
 // console.log([i])
-
