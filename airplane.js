@@ -372,4 +372,4 @@ overLay.classList.add('remove')
 // for(let i = 1; i <= input;i++){
 // number.push(i)
 // console.log([i])
-}
+
