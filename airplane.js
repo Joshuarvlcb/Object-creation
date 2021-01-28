@@ -59,10 +59,10 @@ const dateFormat = function (birthYear) {
   let day = date.getDate() + 1;
   return `${month}/${day}/${year}`;
 };
-const extraCost = function (bags, checkbox) {
+const extraCost = function (bags = 0, checkbox) {
   const bags2 = Number(bags);
-  let checkbox2 = checkbox.size + 1;
-  const total = bags2 * 20 + checkbox2 * 10 + 300;
+  let checkbox2 = checkbox.size ;
+  const total = (bags2 * 20) + (checkbox2 * 10) + 300;
   if (!checkbox2) {
     checkbox2 = 1;
     console.log(`your total is ${bags2 * 20 + checkbox2 * 10 + 300}$`);
@@ -70,7 +70,6 @@ const extraCost = function (bags, checkbox) {
     console.log(`your total is ${total}$`);
   }
 };
-
 let id = 56;
 const objectData = [];
 const joshua = new User(
@@ -154,6 +153,7 @@ for (let i = 0; i < checks.length; i++) {
     } else {
       boxes.delete(checks[i].value);
     }
+
   });
 }
 const setup = document
@@ -177,8 +177,10 @@ const setup = document
       radioValue.includes("fish") ||
       radioValue.includes("vegeterian")
     )
-    if(boxes.has('legRoom') || boxes.has('windowseat') || boxes.has('headphones') || boxes.has('meal')){
+    if(boxes.has('legRoom') || boxes.has('windowSeat') || boxes.has('headphones') || boxes.has('meal')){
      {
+      console.log(boxes.size)
+
       const passenger = new User(
         firstName,
         lastName,
